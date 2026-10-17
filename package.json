@@ -1,0 +1,20 @@
+{
+  "name": "wealthbaseiq-backend",
+  "version": "0.6.3",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "plaid": "^38.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "@types/node": "^24.0.0"
+  }
+}
