@@ -255,6 +255,27 @@ async function buildSnapshot(): Promise<CachedSnapshot> {
   } finally { syncInProgress = false; }
 }
 
+app.get("/.well-known/apple-app-site-association", (_req, res) => {
+  res.type("application/json");
+  res.send({
+    applinks: {
+      details: [
+        {
+          appIDs: [
+            "SX845TN4F7.com.seegill.WealthBaseIQ"
+          ],
+          components: [
+            {
+              "/": "/plaid/*",
+              comment: "Plaid OAuth return"
+            }
+          ]
+        }
+      ]
+    }
+  });
+});
+
 app.get('/api/health', (_req, res) => {
   res.json({
     ok: true, environment: env, environmentLabel: environmentLabel(), connectedItems: store.items.length,
